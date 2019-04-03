@@ -147,6 +147,8 @@ namespace Scrabble
             // 
             // pictureBoxExit
             // 
+            this.pictureBoxExit.Image = Exit;
+            this.pictureBoxExit.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pictureBoxExit.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxExit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -159,6 +161,8 @@ namespace Scrabble
             // 
             // pictureBoxStart
             // 
+            this.pictureBoxStart.Image = Start;
+            this.pictureBoxStart.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pictureBoxStart.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxStart.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -171,6 +175,8 @@ namespace Scrabble
             // 
             // pictureBoxRules
             // 
+            this.pictureBoxRules.Image = Rules;
+            this.pictureBoxRules.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pictureBoxRules.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxRules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxRules.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -183,6 +189,8 @@ namespace Scrabble
             // 
             // pictureBoxScore
             // 
+            this.pictureBoxScore.Image = Score;
+            this.pictureBoxScore.SizeMode = PictureBoxSizeMode.StretchImage;
             this.pictureBoxScore.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxScore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxScore.Cursor = System.Windows.Forms.Cursors.Hand;

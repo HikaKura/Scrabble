@@ -22,14 +22,6 @@ namespace Scrabble
         public MainForm()
         {
             InitializeComponent();
-            pictureBoxExit.Image = Exit;
-            pictureBoxExit.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxStart.Image = Start;
-            pictureBoxStart.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxRules.Image = Rules;
-            pictureBoxRules.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxScore.Image = Score;
-            pictureBoxScore.SizeMode = PictureBoxSizeMode.StretchImage;
 
             System.Media.SoundPlayer Audio;
             Audio = new System.Media.SoundPlayer(Properties.Resources.Dendy8bit);
