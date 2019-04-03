@@ -62,7 +62,7 @@ namespace Scrabble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1054, 571);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.buttonToMenu);
@@ -90,7 +90,7 @@ namespace Scrabble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1054, 571);
             this.Controls.Add(this.buttonToMenu);
             this.Name = "RulesForm";
             this.Text = "Rules";
@@ -116,7 +116,7 @@ namespace Scrabble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1054, 571);
             this.Controls.Add(this.buttonToMenu);
             this.Name = "ScoreForm";
             this.Text = "HighScore";
