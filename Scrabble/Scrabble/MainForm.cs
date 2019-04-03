@@ -19,23 +19,26 @@ namespace Scrabble
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            PlayForm playForm = new PlayForm();
-            if (!playForm.Visible)
-                playForm.Show(this);
+            DeleteComponent();
+            PlayForm();
+        }
+
+        private void buttonToMenu_Click(object sender, EventArgs e)
+        {
+            DeleteComponent();
+            InitializeComponent();
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
         {
-            RulesForm rulesForm = new RulesForm();
-            if (!rulesForm.Visible)
-                rulesForm.Show(this);
+            DeleteComponent();
+            RulesForm();
         }
 
         private void buttonScore_Click(object sender, EventArgs e)
         {
-            ScoreForm scoreForm = new ScoreForm();
-            if (!scoreForm.Visible)
-                scoreForm.Show(this);
+            DeleteComponent();
+            ScoreForm();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

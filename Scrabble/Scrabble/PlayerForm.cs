@@ -12,8 +12,6 @@ namespace Scrabble
 {
     public partial class PlayerForm : Form
     {
-        ScoreForm scoreForm = new ScoreForm();
-
         public PlayerForm()
         {
             InitializeComponent();
@@ -21,7 +19,37 @@ namespace Scrabble
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            scoreForm.Show();
+            DeleteComponent();
+            ScoreForm();
+        }
+
+        private void buttonToMenu_Click(object sender, EventArgs e)
+        {
+            DeleteComponent();
+            MainForm();
+        }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            DeleteComponent();
+       //     PlayForm();
+        } 
+
+        private void buttonRules_Click(object sender, EventArgs e)
+        {
+            DeleteComponent();
+        //    RulesForm();
+        }
+
+        private void buttonScore_Click(object sender, EventArgs e)
+        {
+            DeleteComponent();
+            ScoreForm();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
