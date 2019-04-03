@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scrabble.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,28 @@ namespace Scrabble
 {
     public partial class MainForm : Form
     {
+        Image Exit = Resources.ExitButton;
+        Image Start = Resources.StartButton;
+        Image Rules = Resources.RulesButton;
+        Image Score = Resources.ScoreButton;
+        public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
+
         public MainForm()
         {
             InitializeComponent();
+            pictureBoxExit.Image = Exit;
+            pictureBoxExit.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxStart.Image = Start;
+            pictureBoxStart.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxRules.Image = Rules;
+            pictureBoxRules.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxScore.Image = Score;
+            pictureBoxScore.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            System.Media.SoundPlayer Audio;
+            Audio = new System.Media.SoundPlayer(Properties.Resources.Dendy8bit);
+            Audio.Load();
+            Audio.PlayLooping();
         }
 
         private void buttonPlay_Click(object sender, EventArgs e)
