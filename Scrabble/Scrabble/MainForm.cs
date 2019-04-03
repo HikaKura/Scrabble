@@ -13,10 +13,7 @@ namespace Scrabble
 {
     public partial class MainForm : Form
     {
-        Image Exit = Resources.ExitButton;
-        Image Start = Resources.StartButton;
-        Image Rules = Resources.RulesButton;
-        Image Score = Resources.ScoreButton;
+
         public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
 
         public MainForm()

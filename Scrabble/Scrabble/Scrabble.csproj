@@ -140,9 +140,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Dendy 8 bit Mix.mp3" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Dendy8bit.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\backgroundMenuNew.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackToMenuButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

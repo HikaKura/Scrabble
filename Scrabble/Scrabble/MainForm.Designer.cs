@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Scrabble.Properties;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Scrabble
@@ -73,53 +75,65 @@ namespace Scrabble
 
         private void RulesForm()
         {
-            this.buttonToMenu = new System.Windows.Forms.Button();
+            this.pictureBoxBackToMenu = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonToMenu
+            // pictureBoxBackToMenu
             // 
-            this.buttonToMenu.Location = new System.Drawing.Point(517, 5);
-            this.buttonToMenu.Name = "buttonToMenu";
-            this.buttonToMenu.Size = new System.Drawing.Size(248, 60);
-            this.buttonToMenu.TabIndex = 0;
-            this.buttonToMenu.Text = "Back to menu";
-            this.buttonToMenu.UseVisualStyleBackColor = true;
-            this.buttonToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
+            this.pictureBoxBackToMenu.Image = BackToMenu;
+            this.pictureBoxBackToMenu.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBackToMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBackToMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxBackToMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxBackToMenu.Location = new System.Drawing.Point(720, 450);
+            this.pictureBoxBackToMenu.Name = "pictureBoxBackToMenu";
+            this.pictureBoxBackToMenu.Size = new System.Drawing.Size(348, 147);
+            this.pictureBoxBackToMenu.TabIndex = 0;
+            this.pictureBoxBackToMenu.TabStop = false;
+            this.pictureBoxBackToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
             // RulesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 571);
-            this.Controls.Add(this.buttonToMenu);
+            this.Controls.Add(this.pictureBoxBackToMenu);
             this.Name = "RulesForm";
             this.Text = "Rules";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).EndInit();
             this.ResumeLayout(false);
         }
 
         private void ScoreForm()
         {
-            this.buttonToMenu = new System.Windows.Forms.Button();
+            this.pictureBoxBackToMenu = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonToMenu
+            // pictureBoxBackToMenu
             // 
-            this.buttonToMenu.Location = new System.Drawing.Point(524, 22);
-            this.buttonToMenu.Name = "buttonToMenu";
-            this.buttonToMenu.Size = new System.Drawing.Size(248, 60);
-            this.buttonToMenu.TabIndex = 1;
-            this.buttonToMenu.Text = "Back to menu";
-            this.buttonToMenu.UseVisualStyleBackColor = true;
-            this.buttonToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
+            this.pictureBoxBackToMenu.Image = BackToMenu;
+            this.pictureBoxBackToMenu.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBackToMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBackToMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxBackToMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxBackToMenu.Location = new System.Drawing.Point(720, 450);
+            this.pictureBoxBackToMenu.Name = "pictureBoxBackToMenu";
+            this.pictureBoxBackToMenu.Size = new System.Drawing.Size(348, 147);
+            this.pictureBoxBackToMenu.TabIndex = 0;
+            this.pictureBoxBackToMenu.TabStop = false;
+            this.pictureBoxBackToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
             // ScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 571);
-            this.Controls.Add(this.buttonToMenu);
+            this.Controls.Add(this.pictureBoxBackToMenu);
             this.Name = "ScoreForm";
             this.Text = "HighScore";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -135,10 +149,6 @@ namespace Scrabble
             this.pictureBoxStart = new System.Windows.Forms.PictureBox();
             this.pictureBoxRules = new System.Windows.Forms.PictureBox();
             this.pictureBoxScore = new System.Windows.Forms.PictureBox();
-            this.buttonPlay = new System.Windows.Forms.Button();
-            this.buttonRules = new System.Windows.Forms.Button();
-            this.buttonScore = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRules)).BeginInit();
@@ -201,43 +211,6 @@ namespace Scrabble
             this.pictureBoxScore.TabStop = false;
             this.pictureBoxScore.Click += new System.EventHandler(this.buttonScore_Click);
             // 
-            // buttonPlay
-            // 
-            this.buttonPlay.Location = new System.Drawing.Point(48, 104);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(269, 57);
-            this.buttonPlay.TabIndex = 0;
-            this.buttonPlay.Text = "Play";
-            this.buttonPlay.UseVisualStyleBackColor = true;
-            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
-            // 
-            // buttonRules
-            // 
-            this.buttonRules.Location = new System.Drawing.Point(48, 189);
-            this.buttonRules.Name = "buttonRules";
-            this.buttonRules.Size = new System.Drawing.Size(269, 57);
-            this.buttonRules.TabIndex = 1;
-            this.buttonRules.Text = "Rules";
-            this.buttonRules.UseVisualStyleBackColor = true;
-            this.buttonRules.Click += new System.EventHandler(this.buttonRules_Click);
-            // 
-            // buttonScore
-            // 
-            this.buttonScore.Location = new System.Drawing.Point(48, 270);
-            this.buttonScore.Name = "buttonScore";
-            this.buttonScore.Size = new System.Drawing.Size(269, 57);
-            this.buttonScore.TabIndex = 2;
-            this.buttonScore.Text = "Score";
-            this.buttonScore.UseVisualStyleBackColor = true;
-            this.buttonScore.Click += new System.EventHandler(this.buttonScore_Click);
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(0, 0);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
-            this.buttonExit.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,10 +218,6 @@ namespace Scrabble
             this.BackgroundImage = global::Scrabble.Properties.Resources.backgroundMenuNew;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
-            //this.Controls.Add(this.buttonExit);
-            //this.Controls.Add(this.buttonScore);
-            //this.Controls.Add(this.buttonRules);
-            //this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.pictureBoxScore);
             this.Controls.Add(this.pictureBoxRules);
             this.Controls.Add(this.pictureBoxStart);
@@ -274,17 +243,19 @@ namespace Scrabble
             }
         }
 
-        private System.Windows.Forms.Button buttonPlay;
-        private System.Windows.Forms.Button buttonRules;
-        private System.Windows.Forms.Button buttonScore;
-        private System.Windows.Forms.Button buttonExit;
         private Button buttonToMenu;
         private Button buttonChange;
         private Button buttonHelp;
-        private System.Windows.Forms.PictureBox pictureBoxExit;
+        private PictureBox pictureBoxExit;
         private PictureBox pictureBoxStart;
         private PictureBox pictureBoxRules;
         private PictureBox pictureBoxScore;
+        private PictureBox pictureBoxBackToMenu;
+        Image Exit = Resources.ExitButton;
+        Image Start = Resources.StartButton;
+        Image Rules = Resources.RulesButton;
+        Image Score = Resources.ScoreButton;
+        Image BackToMenu = Resources.BackToMenuButton;
     }
 }
 
