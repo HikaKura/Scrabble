@@ -27,49 +27,89 @@ namespace Scrabble
 
         private void PlayForm()
         {
-            this.buttonToMenu = new System.Windows.Forms.Button();
-            this.buttonChange = new System.Windows.Forms.Button();
-            this.buttonHelp = new System.Windows.Forms.Button();
+            this.pictureBoxChange = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
+            this.pictureBoxField = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonToMenu
+            // pictureBoxChange
             // 
-            this.buttonToMenu.Location = new System.Drawing.Point(724, 387);
-            this.buttonToMenu.Name = "buttonToMenu";
-            this.buttonToMenu.Size = new System.Drawing.Size(74, 60);
-            this.buttonToMenu.TabIndex = 1;
-            this.buttonToMenu.Text = "Back to menu";
-            this.buttonToMenu.UseVisualStyleBackColor = true;
-            this.buttonToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
+            this.pictureBoxChange.Image = Change;
+            this.pictureBoxChange.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxChange.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxChange.Location = new System.Drawing.Point(810, 450);
+            this.pictureBoxChange.Name = "pictureBoxChange";
+            this.pictureBoxChange.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxChange.TabIndex = 0;
+            this.pictureBoxChange.TabStop = false;
+            this.pictureBoxChange.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
-            // buttonChange
+            // pictureBoxHelp
             // 
-            this.buttonChange.Location = new System.Drawing.Point(564, 387);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(74, 60);
-            this.buttonChange.TabIndex = 2;
-            this.buttonChange.Text = "Change";
-            this.buttonChange.UseVisualStyleBackColor = true;
+            this.pictureBoxHelp.Image = Help;
+            this.pictureBoxHelp.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHelp.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxHelp.Location = new System.Drawing.Point(673, 450);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxHelp.TabIndex = 1;
+            this.pictureBoxHelp.TabStop = false;
+            this.pictureBoxHelp.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
-            // buttonHelp
+            // pictureBoxBack
             // 
-            this.buttonHelp.Location = new System.Drawing.Point(644, 387);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(74, 60);
-            this.buttonHelp.TabIndex = 3;
-            this.buttonHelp.Text = "Help";
-            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.pictureBoxBack.Image = Back;
+            this.pictureBoxBack.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxBack.Location = new System.Drawing.Point(943, 450);
+            this.pictureBoxBack.Name = "pictureBoxBack";
+            this.pictureBoxBack.Size = new System.Drawing.Size(100, 100);
+            this.pictureBoxBack.TabIndex = 1;
+            this.pictureBoxBack.TabStop = false;
+            this.pictureBoxBack.Click += new System.EventHandler(this.buttonToMenu_Click);
+            // 
+            // pictureBoxField
+            // 
+            this.pictureBoxField.Image = Field;
+            this.pictureBoxField.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxField.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxField.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxField.Location = new System.Drawing.Point(40, 65);
+            this.pictureBoxField.Name = "pictureBoxField";
+            this.pictureBoxField.Size = new System.Drawing.Size(500, 500);
+            this.pictureBoxField.TabIndex = 2;
+            this.pictureBoxField.TabStop = false;
+            this.pictureBoxField.Click += new System.EventHandler(this.buttonRules_Click);          
             // 
             // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.backgroundPlay;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
-            this.Controls.Add(this.buttonHelp);
-            this.Controls.Add(this.buttonChange);
-            this.Controls.Add(this.buttonToMenu);
+            this.Controls.Add(this.pictureBoxChange);
+            this.Controls.Add(this.pictureBoxHelp);
+            this.Controls.Add(this.pictureBoxField);
+            this.Controls.Add(this.pictureBoxBack);
             this.Name = "PlayForm";
             this.Text = "Play";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -230,7 +270,6 @@ namespace Scrabble
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRules)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScore)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -243,9 +282,6 @@ namespace Scrabble
             }
         }
 
-        private Button buttonToMenu;
-        private Button buttonChange;
-        private Button buttonHelp;
         private PictureBox pictureBoxExit;
         private PictureBox pictureBoxStart;
         private PictureBox pictureBoxRules;
@@ -256,6 +292,14 @@ namespace Scrabble
         Image Rules = Resources.RulesButton;
         Image Score = Resources.ScoreButton;
         Image BackToMenu = Resources.BackToMenuButton;
+        Image Change = Resources.Change;
+        Image Help = Resources.Help;
+        Image Back = Resources.Back;
+        Image Field = Resources.Field;
+        private PictureBox pictureBoxChange;
+        private PictureBox pictureBoxHelp;
+        private PictureBox pictureBoxField;
+        private PictureBox pictureBoxBack;
     }
 }
 
