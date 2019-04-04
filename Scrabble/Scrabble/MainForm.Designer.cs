@@ -90,8 +90,7 @@ namespace Scrabble
             this.pictureBoxField.Name = "pictureBoxField";
             this.pictureBoxField.Size = new System.Drawing.Size(500, 500);
             this.pictureBoxField.TabIndex = 2;
-            this.pictureBoxField.TabStop = false;
-            this.pictureBoxField.Click += new System.EventHandler(this.buttonRules_Click);          
+            this.pictureBoxField.TabStop = false;        
             // 
             // PlayForm
             // 
