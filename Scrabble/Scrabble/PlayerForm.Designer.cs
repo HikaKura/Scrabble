@@ -31,6 +31,7 @@ namespace Scrabble
         private void InitializeComponent()
         {
             this.buttonSave = new System.Windows.Forms.Button();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -43,15 +44,26 @@ namespace Scrabble
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // textBox
+            // 
+            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox.Location = new System.Drawing.Point(30, 55);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(325, 57);
+            this.textBox.TabIndex = 1;
+            // 
             // PlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 180);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.buttonSave);
             this.Name = "PlayerForm";
             this.Text = "Player";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -157,5 +169,6 @@ namespace Scrabble
         private Button buttonRules;
         private Button buttonScore;
         private Button buttonExit;
+        private TextBox textBox;
     }
 }

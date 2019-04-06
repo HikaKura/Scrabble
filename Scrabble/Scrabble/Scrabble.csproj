@@ -262,5 +262,11 @@
   <ItemGroup>
     <None Include="Resources\left.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Score.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScoreForm.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

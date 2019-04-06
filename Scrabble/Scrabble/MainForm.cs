@@ -49,6 +49,12 @@ namespace Scrabble
             ScoreForm();
         }
 
+        private void buttonPlayer_Click(object sender, EventArgs e)
+        {
+            PlayerForm player = new PlayerForm();
+            player.Show();
+        }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();

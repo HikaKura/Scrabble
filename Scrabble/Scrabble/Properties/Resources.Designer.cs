@@ -410,11 +410,31 @@ namespace Scrabble.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Hikaro 150
+        ///Akihiko 3.
+        /// </summary>
+        internal static string Score {
+            get {
+                return ResourceManager.GetString("Score", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ScoreButton {
             get {
                 object obj = ResourceManager.GetObject("ScoreButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ScoreForm {
+            get {
+                object obj = ResourceManager.GetObject("ScoreForm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

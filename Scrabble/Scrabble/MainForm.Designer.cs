@@ -1,6 +1,8 @@
 ﻿using Scrabble.Properties;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Scrabble
@@ -63,7 +65,7 @@ namespace Scrabble
             this.pictureBoxHelp.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxHelp.TabIndex = 1;
             this.pictureBoxHelp.TabStop = false;
-            this.pictureBoxHelp.Click += new System.EventHandler(this.buttonToMenu_Click);
+            this.pictureBoxHelp.Click += new System.EventHandler(this.buttonPlayer_Click);
             // 
             // pictureBoxBack
             // 
@@ -217,7 +219,13 @@ namespace Scrabble
 
         private void ScoreForm()
         {
+
             this.pictureBoxBackToMenu = new System.Windows.Forms.PictureBox();
+
+            //this.label2 = new System.Windows.Forms.Label();
+            //this.label3 = new System.Windows.Forms.Label();
+            //this.label4 = new System.Windows.Forms.Label();
+            //this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,11 +242,44 @@ namespace Scrabble
             this.pictureBoxBackToMenu.TabIndex = 0;
             this.pictureBoxBackToMenu.TabStop = false;
             this.pictureBoxBackToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
+            //
+            //
+            //
+            using (StreamReader sr = new StreamReader("O:\\Source\\Score.txt"))
+            {
+                int count = 1;
+                int sdvig = 0;
+                string line = "";
+                while (!sr.EndOfStream && count <= 5)
+                {
+                    line = sr.ReadLine();
+                    string strlabel = "label" + count;
+                    // 
+                    // strlabel
+                    // 
+                    this.strlabel = new System.Windows.Forms.Label();
+                    this.strlabel = new System.Windows.Forms.Label();
+                    this.strlabel.AutoSize = true;
+                    this.strlabel.BackColor = System.Drawing.Color.Transparent;
+                    this.strlabel.Font = new System.Drawing.Font("Haettenschweiler", 45F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                    this.strlabel.Location = new System.Drawing.Point(135, 95 + sdvig);
+                    this.strlabel.Name = "label1";
+                    this.strlabel.Size = new System.Drawing.Size(109, 39);
+                    this.strlabel.TabIndex = 5;
+                    this.strlabel.Text = line;
+                    this.Controls.Add(this.strlabel);
+                    count++;
+                    sdvig += 72;
+                }
+            }
+
             // 
             // ScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.ScoreForm;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
             this.Controls.Add(this.pictureBoxBackToMenu);
             this.Name = "ScoreForm";
@@ -358,6 +399,7 @@ namespace Scrabble
         private PictureBox pictureBoxRules;
         private PictureBox pictureBoxScore;
         private PictureBox pictureBoxBackToMenu;
+        private Label strlabel;
         Image Exit = Resources.ExitButton;
         Image Start = Resources.StartButton;
         Image Rules = Resources.RulesButton;
