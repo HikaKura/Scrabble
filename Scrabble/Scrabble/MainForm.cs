@@ -19,7 +19,6 @@ namespace Scrabble
         public MainForm()
         {
             InitializeComponent();
-
             System.Media.SoundPlayer Audio;
             Audio = new System.Media.SoundPlayer(Properties.Resources.Dendy8bit);
             Audio.Load();
@@ -53,6 +52,46 @@ namespace Scrabble
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonRightPage_Click(object sender, EventArgs e)
+        {
+            if (page < 3)
+            {
+                page++;
+                if (page == 1)
+                {
+                    OnePage();
+                }
+                else if (page == 2)
+                {
+                    TwoPage();
+                }
+                else if (page == 3)
+                {
+                    ThreePage();
+                }
+            }
+        }
+
+        private void buttonLeftPage_Click(object sender, EventArgs e)
+        {
+            if (page > 1)
+            {
+                page--;
+                if (page == 1)
+                {
+                    OnePage();
+                }
+                else if (page == 2)
+                {
+                    TwoPage();
+                }
+                else if (page == 3)
+                {
+                    ThreePage();
+                }
+            }
         }
     }
 }

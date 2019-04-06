@@ -90,7 +90,7 @@ namespace Scrabble
             this.pictureBoxField.Name = "pictureBoxField";
             this.pictureBoxField.Size = new System.Drawing.Size(500, 500);
             this.pictureBoxField.TabIndex = 2;
-            this.pictureBoxField.TabStop = false;        
+            this.pictureBoxField.TabStop = false;
             // 
             // PlayForm
             // 
@@ -115,7 +115,11 @@ namespace Scrabble
         private void RulesForm()
         {
             this.pictureBoxBackToMenu = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRightPage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLeftPage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightPage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftPage)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxBackToMenu
@@ -132,16 +136,83 @@ namespace Scrabble
             this.pictureBoxBackToMenu.TabStop = false;
             this.pictureBoxBackToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
-            // RulesForm
+            // pictureBoxRightPage
+            // 
+            this.pictureBoxRightPage.Image = RightPage;
+            this.pictureBoxRightPage.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRightPage.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxRightPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxRightPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRightPage.Location = new System.Drawing.Point(270, 490);
+            this.pictureBoxRightPage.Name = "pictureBoxRightPage";
+            this.pictureBoxRightPage.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxRightPage.TabIndex = 0;
+            this.pictureBoxRightPage.TabStop = false;
+            this.pictureBoxRightPage.Click += new System.EventHandler(this.buttonRightPage_Click);
+            // 
+            // pictureBoxLeftPage
+            // 
+            this.pictureBoxLeftPage.Image = LeftPage;
+            this.pictureBoxLeftPage.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLeftPage.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLeftPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxLeftPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxLeftPage.Location = new System.Drawing.Point(-5, 490);
+            this.pictureBoxLeftPage.Name = "pictureBoxLeftPage";
+            this.pictureBoxLeftPage.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxLeftPage.TabIndex = 0;
+            this.pictureBoxLeftPage.TabStop = false;
+            this.pictureBoxLeftPage.Click += new System.EventHandler(this.buttonLeftPage_Click);
+            OnePage();
+            this.Controls.Add(this.pictureBoxBackToMenu);
+            this.Controls.Add(this.pictureBoxRightPage);
+            this.Controls.Add(this.pictureBoxLeftPage);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRightPage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLeftPage)).EndInit();
+            this.ResumeLayout(false);
+        }
+
+        private void OnePage()
+        {
+            // 
+            // RulesFormOnePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesOnePage;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
-            this.Controls.Add(this.pictureBoxBackToMenu);
-            this.Name = "RulesForm";
+            this.Name = "OnePage";
             this.Text = "Rules";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).EndInit();
-            this.ResumeLayout(false);
+        }
+
+        private void TwoPage()
+        {
+            // 
+            // RulesFormTwoPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesTwoPage;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1054, 571);
+            this.Name = "TwoPage";
+            this.Text = "Rules";
+        }
+
+        private void ThreePage()
+        {
+            // 
+            // RulesFormThreePage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesThreePage;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1054, 571);
+            this.Name = "ThreePage";
+            this.Text = "Rules";
         }
 
         private void ScoreForm()
@@ -184,6 +255,7 @@ namespace Scrabble
         /// </summary>
         private void InitializeComponent()
         {
+            page = 1;
             this.pictureBoxExit = new System.Windows.Forms.PictureBox();
             this.pictureBoxStart = new System.Windows.Forms.PictureBox();
             this.pictureBoxRules = new System.Windows.Forms.PictureBox();
@@ -295,10 +367,15 @@ namespace Scrabble
         Image Help = Resources.Help;
         Image Back = Resources.Back;
         Image Field = Resources.Field;
+        Image RightPage = Resources.right;
+        Image LeftPage = Resources.left;
         private PictureBox pictureBoxChange;
         private PictureBox pictureBoxHelp;
         private PictureBox pictureBoxField;
         private PictureBox pictureBoxBack;
+        private PictureBox pictureBoxRightPage;
+        private PictureBox pictureBoxLeftPage;
+        private int page = 1;
     }
 }
 
