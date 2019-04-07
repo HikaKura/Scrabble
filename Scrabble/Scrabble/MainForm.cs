@@ -15,6 +15,7 @@ namespace Scrabble
     {
 
         public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
+        private DateTime StartTime;
 
         public MainForm()
         {
@@ -29,6 +30,8 @@ namespace Scrabble
         {
             DeleteComponent();
             PlayForm();
+            timer.Enabled = !timer.Enabled;
+            StartTime = DateTime.Now;
         }
 
         private void buttonToMenu_Click(object sender, EventArgs e)
@@ -98,6 +101,25 @@ namespace Scrabble
                     ThreePage();
                 }
             }
+        }
+
+        private void tmrClock_Tick(object sender, EventArgs e)
+        {
+            TimeSpan elapsed = DateTime.Now - StartTime;
+
+            // Начнем с дней, если больше 0.
+            string text = "";
+
+            // Преобразование миллисекунд в десятые доли секунды.
+            int tenths = elapsed.Milliseconds / 100;
+
+            // Запишите оставшееся время.
+            text +=
+                elapsed.Hours.ToString("00") + ":" +
+                elapsed.Minutes.ToString("00") + ":" +
+                elapsed.Seconds.ToString("00");
+
+            time.Text = text;
         }
     }
 }

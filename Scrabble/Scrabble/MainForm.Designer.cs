@@ -33,6 +33,8 @@ namespace Scrabble
             this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
             this.pictureBoxField = new System.Windows.Forms.PictureBox();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
+            this.time = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
@@ -92,7 +94,27 @@ namespace Scrabble
             this.pictureBoxField.Name = "pictureBoxField";
             this.pictureBoxField.Size = new System.Drawing.Size(500, 500);
             this.pictureBoxField.TabIndex = 2;
-            this.pictureBoxField.TabStop = false;
+            this.pictureBoxField.TabStop = false; 
+            // 
+            // time
+            // 
+            this.time.AutoSize = true;
+            this.time.BackColor = System.Drawing.Color.Transparent;
+            string font = Properties.Resources.operational_amplifier.ToString();
+            System.Drawing.Text.PrivateFontCollection f = new System.Drawing.Text.PrivateFontCollection();
+            string path = Environment.CurrentDirectory + "\\operational_amplifier.ttf";
+            //C:\\Users\\kimab\\source\\repos\\Scrabble\\Scrabble\\Scrabble\\Resources
+            f.AddFontFile(path);
+            this.time.Font = new Font(f.Families[0], 35F);
+            this.time.ForeColor = Color.White;this.time.Location = new System.Drawing.Point(880,5);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(104, 39);
+            this.time.TabIndex = 5;
+            this.time.Text = "timer";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
             // PlayForm
             // 
@@ -105,6 +127,7 @@ namespace Scrabble
             this.Controls.Add(this.pictureBoxHelp);
             this.Controls.Add(this.pictureBoxField);
             this.Controls.Add(this.pictureBoxBack);
+            this.Controls.Add(this.time);
             this.Name = "PlayForm";
             this.Text = "Play";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).EndInit();
@@ -221,11 +244,6 @@ namespace Scrabble
         {
 
             this.pictureBoxBackToMenu = new System.Windows.Forms.PictureBox();
-
-            //this.label2 = new System.Windows.Forms.Label();
-            //this.label3 = new System.Windows.Forms.Label();
-            //this.label4 = new System.Windows.Forms.Label();
-            //this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,9 +261,10 @@ namespace Scrabble
             this.pictureBoxBackToMenu.TabStop = false;
             this.pictureBoxBackToMenu.Click += new System.EventHandler(this.buttonToMenu_Click);
             //
+            //score
             //
-            //
-            using (StreamReader sr = new StreamReader("O:\\Source\\Score.txt"))
+            string path = Environment.CurrentDirectory + "\\Score.txt";
+            using (StreamReader sr = new StreamReader(path))
             {
                 int count = 1;
                 int sdvig = 0;
@@ -257,7 +276,6 @@ namespace Scrabble
                     // 
                     // strlabel
                     // 
-                    this.strlabel = new System.Windows.Forms.Label();
                     this.strlabel = new System.Windows.Forms.Label();
                     this.strlabel.AutoSize = true;
                     this.strlabel.BackColor = System.Drawing.Color.Transparent;
@@ -272,7 +290,6 @@ namespace Scrabble
                     sdvig += 72;
                 }
             }
-
             // 
             // ScoreForm
             // 
@@ -399,6 +416,7 @@ namespace Scrabble
         private PictureBox pictureBoxRules;
         private PictureBox pictureBoxScore;
         private PictureBox pictureBoxBackToMenu;
+        private System.Windows.Forms.Timer timer;
         private Label strlabel;
         Image Exit = Resources.ExitButton;
         Image Start = Resources.StartButton;
@@ -415,6 +433,7 @@ namespace Scrabble
         private PictureBox pictureBoxHelp;
         private PictureBox pictureBoxField;
         private PictureBox pictureBoxBack;
+        private Label time;
         private PictureBox pictureBoxRightPage;
         private PictureBox pictureBoxLeftPage;
         private int page = 1;

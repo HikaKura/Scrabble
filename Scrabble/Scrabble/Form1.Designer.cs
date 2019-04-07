@@ -1,4 +1,7 @@
-﻿namespace Scrabble
+﻿using System;
+using System.Drawing;
+
+namespace Scrabble
 {
     partial class Form1
     {
@@ -28,12 +31,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,12 +106,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Gigi", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            System.Drawing.Text.PrivateFontCollection f = new System.Drawing.Text.PrivateFontCollection();
+            f.AddFontFile("O:\\Source\\operational_amplifier.ttf");
+
+            this.label1.Font = new Font(f.Families[0], 25F);
+            //this.label1.Font = new System.Drawing.Font(f.Families[0], 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(70, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 39);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
+            // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.tmrClock_Tick);
             // 
             // Form1
             // 
@@ -121,6 +134,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -141,5 +155,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
+        private Boolean end = true;
+        private System.Windows.Forms.Timer timer;
     }
 }

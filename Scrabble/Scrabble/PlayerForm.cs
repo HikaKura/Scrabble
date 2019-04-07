@@ -36,7 +36,8 @@ namespace Scrabble
                     ScoreForm();
                 }
             }
-            using (StreamReader sr = new StreamReader("O:\\Source\\Score.txt"))
+            string path = Environment.CurrentDirectory + "\\Score.txt";
+            using (StreamReader sr = new StreamReader(path))
             {
                 int key = 0;
                 int keymax = 0;
@@ -52,7 +53,7 @@ namespace Scrabble
                     }
                     score.Add(key, line);
                 }
-                int rec = 58;
+                int rec = 110;
                 string Player = player + " " + rec;
                 score.Add(rec, Player);
                 var sortedDict = new SortedDictionary<int, string>(score);
@@ -61,7 +62,7 @@ namespace Scrabble
                     stack.Push(sort.Value);
                 }
             }
-            using (StreamWriter sw = new StreamWriter("O:\\Source\\Score.txt"))
+            using (StreamWriter sw = new StreamWriter(path))
             {
                 foreach (KeyValuePair<int, string> Scores in score)
                 {
@@ -69,7 +70,6 @@ namespace Scrabble
                 }
             }
         }
-
 
         private void buttonToMenu_Click(object sender, EventArgs e)
         {
@@ -80,13 +80,11 @@ namespace Scrabble
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             DeleteComponent();
-            //     PlayForm();
         }
 
         private void buttonRules_Click(object sender, EventArgs e)
         {
             DeleteComponent();
-            //    RulesForm();
         }
 
         private void buttonScore_Click(object sender, EventArgs e)
