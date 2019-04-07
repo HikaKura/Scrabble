@@ -34,7 +34,6 @@ namespace Scrabble
                     player = textBox.Text;
                     Close();
                     DeleteComponent();
-                    //ScoreForm();
                     string path = Environment.CurrentDirectory + "\\Score.txt";
                     using (StreamReader sr = new StreamReader(path))
                     {

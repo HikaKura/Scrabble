@@ -40,6 +40,7 @@ namespace Scrabble
             DeleteComponent();
             InitializeComponent();
         }
+        
 
         private void buttonRules_Click(object sender, EventArgs e)
         {

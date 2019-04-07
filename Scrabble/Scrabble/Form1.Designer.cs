@@ -39,6 +39,7 @@ namespace Scrabble
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -106,20 +107,21 @@ namespace Scrabble
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            System.Drawing.Text.PrivateFontCollection f = new System.Drawing.Text.PrivateFontCollection();
-            f.AddFontFile("O:\\Source\\operational_amplifier.ttf");
-
-            this.label1.Font = new Font(f.Families[0], 25F);
-            //this.label1.Font = new System.Drawing.Font(f.Families[0], 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(70, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 39);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.tmrClock_Tick);
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Form1
             // 
@@ -157,5 +159,6 @@ namespace Scrabble
         private System.Windows.Forms.Label label1;
         private Boolean end = true;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ImageList imageList;
     }
 }

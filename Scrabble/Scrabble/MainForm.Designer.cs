@@ -14,6 +14,9 @@ namespace Scrabble
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         private Random rnd = new Random();
+        private Random rand = new Random();
+       
+
 
         /// <summary>
         /// Освободить все используемые ресурсы.
@@ -30,18 +33,147 @@ namespace Scrabble
 
         private void PlayForm()
         {
+            char tmp = (char)rand.Next('A', 'Z' + 1);
+            int let = 0;
             this.pictureBoxChange = new System.Windows.Forms.PictureBox();
             this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
             this.pictureBoxField = new System.Windows.Forms.PictureBox();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
             this.time = new System.Windows.Forms.Label();
             this.record = new System.Windows.Forms.Label();
+            this.imageList = new System.Windows.Forms.ImageList();
             this.timer = new System.Windows.Forms.Timer();
+            this.letter1 = new System.Windows.Forms.PictureBox();
+            this.letter2 = new System.Windows.Forms.PictureBox();
+            this.letter3 = new System.Windows.Forms.PictureBox();
+            this.letter4 = new System.Windows.Forms.PictureBox();
+            this.letter5 = new System.Windows.Forms.PictureBox();
+            this.letter6 = new System.Windows.Forms.PictureBox();
+            this.letter7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter7)).BeginInit();
             this.SuspendLayout();
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(256, 256);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.AddRange(new Image[] { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z });
+            // 
+            // letter1
+            // 
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter1.Image = imageList.Images[let]; 
+            this.letter1.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter1.BackColor = System.Drawing.Color.Transparent;
+            this.letter1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter1.Location = new System.Drawing.Point(800, 130);
+            this.letter1.Name = "letter1";
+            this.letter1.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter1.TabIndex = 0;
+            this.letter1.TabStop = false;
+            // 
+            // letter2
+            // 
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter2.Image = imageList.Images[let]; 
+            this.letter2.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter2.BackColor = System.Drawing.Color.Transparent;
+            this.letter2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter2.Location = new System.Drawing.Point(900, 130);
+            this.letter2.Name = "letter2";
+            this.letter2.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter2.TabIndex = 0;
+            this.letter2.TabStop = false;
+            // 
+            // letter3
+            //
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter3.Image = imageList.Images[let]; 
+            this.letter3.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter3.BackColor = System.Drawing.Color.Transparent;
+            this.letter3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter3.Location = new System.Drawing.Point(800, 200);
+            this.letter3.Name = "letter3";
+            this.letter3.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter3.TabIndex = 0;
+            this.letter3.TabStop = false;
+            // 
+            // letter4
+            // 
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter4.Image = imageList.Images[let]; 
+            this.letter4.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter4.BackColor = System.Drawing.Color.Transparent;
+            this.letter4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter4.Location = new System.Drawing.Point(900, 200);
+            this.letter4.Name = "letter4";
+            this.letter4.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter4.TabIndex = 0;
+            this.letter4.TabStop = false;
+            // 
+            // letter5
+            // 
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter5.Image = imageList.Images[let]; 
+            this.letter5.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter5.BackColor = System.Drawing.Color.Transparent;
+            this.letter5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter5.Location = new System.Drawing.Point(800, 270);
+            this.letter5.Name = "letter5";
+            this.letter5.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter5.TabIndex = 0;
+            this.letter5.TabStop = false;
+            // 
+            // letter6
+            // 
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter6.Image = imageList.Images[let]; 
+            this.letter6.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter6.BackColor = System.Drawing.Color.Transparent;
+            this.letter6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter6.Location = new System.Drawing.Point(900, 270);
+            this.letter6.Name = "letter6";
+            this.letter6.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter6.TabIndex = 0;
+            this.letter6.TabStop = false;
+            // 
+            // letter7
+            // 
+            let = rnd.Next(0, imageList.Images.Count);
+            this.letter7.Image = imageList.Images[let]; 
+            this.letter7.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.letter7.BackColor = System.Drawing.Color.Transparent;
+            this.letter7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.letter7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.letter7.Location = new System.Drawing.Point(800, 340);
+            this.letter7.Name = "letter7";
+            this.letter7.Size = new System.Drawing.Size(50, 50);
+            this.letter1.Text = let.ToString();
+            this.letter7.TabIndex = 0;
+            this.letter7.TabStop = false;
             // 
             // pictureBoxChange
             // 
@@ -124,7 +256,7 @@ namespace Scrabble
             this.record.Name = "record";
             this.record.Size = new System.Drawing.Size(104, 39);
             this.record.TabIndex = 5;
-            //this.record.Text = rnd.Next(100).ToString();
+            //this.record.Text = tmp.ToString();
             // 
             // timer
             // 
@@ -141,6 +273,13 @@ namespace Scrabble
             this.Controls.Add(this.pictureBoxHelp);
             this.Controls.Add(this.pictureBoxField);
             this.Controls.Add(this.pictureBoxBack);
+            this.Controls.Add(this.letter1);
+            this.Controls.Add(this.letter2);
+            this.Controls.Add(this.letter3);
+            this.Controls.Add(this.letter4);
+            this.Controls.Add(this.letter5);
+            this.Controls.Add(this.letter6);
+            this.Controls.Add(this.letter7);
             this.Controls.Add(this.time);
             this.Controls.Add(this.record);
             this.Name = "PlayForm";
@@ -149,6 +288,13 @@ namespace Scrabble
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.letter7)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -432,6 +578,13 @@ namespace Scrabble
         private PictureBox pictureBoxScore;
         private PictureBox pictureBoxBackToMenu;
         private System.Windows.Forms.Timer timer;
+        private PictureBox letter1;
+        private PictureBox letter2;
+        private PictureBox letter3;
+        private PictureBox letter4;
+        private PictureBox letter5;
+        private PictureBox letter6;
+        private PictureBox letter7;
         private Label strlabel;
         Image Exit = Resources.ExitButton;
         Image Start = Resources.StartButton;
@@ -450,9 +603,36 @@ namespace Scrabble
         private PictureBox pictureBoxBack;
         private Label time;
         public Label record;
+        private ImageList imageList;
         private PictureBox pictureBoxRightPage;
         private PictureBox pictureBoxLeftPage;
         private int page = 1;
+        Image A = Resources.A;
+        Image B = Resources.B;
+        Image C = Resources.C;
+        Image D = Resources.D;
+        Image E = Resources.E;
+        Image F = Resources.F;
+        Image G = Resources.G;
+        Image H = Resources.H;
+        Image I = Resources.I;
+        Image J = Resources.J;
+        Image K = Resources.K;
+        Image L = Resources.L;
+        Image M = Resources.M;
+        Image N = Resources.N;
+        Image O = Resources.O;
+        Image P = Resources.P;
+        Image Q = Resources.Q;
+        Image R = Resources.R;
+        Image S = Resources.S;
+        Image T = Resources.T;
+        Image U = Resources.U;
+        Image V = Resources.V;
+        Image W = Resources.W;
+        Image X = Resources.X;
+        Image Y = Resources.Y;
+        Image Z = Resources.Z;
     }
 }
 
