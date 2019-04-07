@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using Scrabble.Properties;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Scrabble
 {
@@ -30,24 +32,32 @@ namespace Scrabble
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureBoxSave = new System.Windows.Forms.PictureBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSave)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonSave
+            // pictureBoxSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(12, 131);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(174, 46);
-            this.buttonSave.TabIndex = 0;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.pictureBoxSave.Image = Save;
+            this.pictureBoxSave.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSave.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSave.Location = new System.Drawing.Point(-30, 130);
+            this.pictureBoxSave.Name = "pictureBoxChange";
+            this.pictureBoxSave.Size = new System.Drawing.Size(180, 80);
+            this.pictureBoxSave.TabIndex = 0;
+            this.pictureBoxSave.TabStop = false;
+            this.pictureBoxSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBox
             // 
+            this.textBox.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox.Location = new System.Drawing.Point(30, 55);
+            this.textBox.Location = new System.Drawing.Point(30, 68);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(325, 57);
@@ -57,11 +67,15 @@ namespace Scrabble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 180);
+            this.BackgroundImage = global::Scrabble.Properties.Resources.PlayerForm;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(422, 200);
             this.Controls.Add(this.textBox);
-            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.pictureBoxSave);
             this.Name = "PlayerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Player";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,6 +177,7 @@ namespace Scrabble
             }
         }
 
+        private PictureBox pictureBoxSave;
         private System.Windows.Forms.Button buttonSave;
         private Button buttonToMenu;
         private Button buttonPlay;
@@ -170,5 +185,6 @@ namespace Scrabble
         private Button buttonScore;
         private Button buttonExit;
         private TextBox textBox;
+        Image Save = Resources.SaveButton;
     }
 }

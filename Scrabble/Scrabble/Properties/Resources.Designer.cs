@@ -332,6 +332,16 @@ namespace Scrabble.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PlayerForm {
+            get {
+                object obj = ResourceManager.GetObject("PlayerForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Q {
             get {
                 object obj = ResourceManager.GetObject("Q", resourceCulture);
@@ -405,6 +415,16 @@ namespace Scrabble.Properties {
         internal static System.Drawing.Bitmap S {
             get {
                 object obj = ResourceManager.GetObject("S", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SaveButton {
+            get {
+                object obj = ResourceManager.GetObject("SaveButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
