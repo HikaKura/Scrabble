@@ -100,7 +100,6 @@ namespace Scrabble
             // 
             this.time.AutoSize = true;
             this.time.BackColor = System.Drawing.Color.Transparent;
-            string font = Properties.Resources.operational_amplifier.ToString();
             System.Drawing.Text.PrivateFontCollection f = new System.Drawing.Text.PrivateFontCollection();
             string path = Environment.CurrentDirectory + "\\operational_amplifier.ttf";
             //C:\\Users\\kimab\\source\\repos\\Scrabble\\Scrabble\\Scrabble\\Resources

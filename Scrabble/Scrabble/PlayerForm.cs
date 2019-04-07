@@ -15,7 +15,6 @@ namespace Scrabble
     {
         private Dictionary<int, string> score = new Dictionary<int, string>();
         private Stack<string> stack = new Stack<string>();
-        private string path = Properties.Resources.Score;
 
         public PlayerForm()
         {

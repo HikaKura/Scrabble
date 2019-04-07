@@ -320,16 +320,6 @@ namespace Scrabble.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] operational_amplifier {
-            get {
-                object obj = ResourceManager.GetObject("operational_amplifier", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap P {
@@ -416,16 +406,6 @@ namespace Scrabble.Properties {
             get {
                 object obj = ResourceManager.GetObject("S", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Hikaro 150
-        ///Akihiko 3.
-        /// </summary>
-        internal static string Score {
-            get {
-                return ResourceManager.GetString("Score", resourceCulture);
             }
         }
         
