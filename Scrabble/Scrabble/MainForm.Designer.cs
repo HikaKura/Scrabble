@@ -96,7 +96,7 @@ namespace Scrabble
             this.letter2.Location = new System.Drawing.Point(900, 130);
             this.letter2.Name = "letter2";
             this.letter2.Size = new System.Drawing.Size(50, 50);
-            this.letter1.Text = let.ToString();
+            this.letter2.Text = let.ToString();
             this.letter2.TabIndex = 0;
             this.letter2.TabStop = false;
             // 
@@ -111,7 +111,7 @@ namespace Scrabble
             this.letter3.Location = new System.Drawing.Point(800, 200);
             this.letter3.Name = "letter3";
             this.letter3.Size = new System.Drawing.Size(50, 50);
-            this.letter1.Text = let.ToString();
+            this.letter3.Text = let.ToString();
             this.letter3.TabIndex = 0;
             this.letter3.TabStop = false;
             // 
@@ -126,7 +126,7 @@ namespace Scrabble
             this.letter4.Location = new System.Drawing.Point(900, 200);
             this.letter4.Name = "letter4";
             this.letter4.Size = new System.Drawing.Size(50, 50);
-            this.letter1.Text = let.ToString();
+            this.letter4.Text = let.ToString();
             this.letter4.TabIndex = 0;
             this.letter4.TabStop = false;
             // 
@@ -141,7 +141,7 @@ namespace Scrabble
             this.letter5.Location = new System.Drawing.Point(800, 270);
             this.letter5.Name = "letter5";
             this.letter5.Size = new System.Drawing.Size(50, 50);
-            this.letter1.Text = let.ToString();
+            this.letter5.Text = let.ToString();
             this.letter5.TabIndex = 0;
             this.letter5.TabStop = false;
             // 
@@ -156,7 +156,7 @@ namespace Scrabble
             this.letter6.Location = new System.Drawing.Point(900, 270);
             this.letter6.Name = "letter6";
             this.letter6.Size = new System.Drawing.Size(50, 50);
-            this.letter1.Text = let.ToString();
+            this.letter6.Text = let.ToString();
             this.letter6.TabIndex = 0;
             this.letter6.TabStop = false;
             // 
@@ -171,7 +171,7 @@ namespace Scrabble
             this.letter7.Location = new System.Drawing.Point(800, 340);
             this.letter7.Name = "letter7";
             this.letter7.Size = new System.Drawing.Size(50, 50);
-            this.letter1.Text = let.ToString();
+            this.letter7.Text = let.ToString();
             this.letter7.TabIndex = 0;
             this.letter7.TabStop = false;
             // 
