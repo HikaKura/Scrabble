@@ -35,35 +35,42 @@ namespace Scrabble
                     Close();
                     DeleteComponent();
                     string path = Environment.CurrentDirectory + "\\Score.txt";
+                    List<string> list = new List<string>();
                     using (StreamReader sr = new StreamReader(path))
                     {
-                        int key = 0;
-                        int keymax = 0;
                         string line = "";
+                        string str = "";
+                        line = player + " " + recordPlayer;
+                        list.Add(line);
                         while (!sr.EndOfStream)
                         {
                             line = sr.ReadLine();
-                            string[] words = line.Split(new char[] { ' ' });
-                            key = Convert.ToInt32(words[1]);
-                            if (key > keymax)
+                            list.Add(line);
+                            for (int i = 1; i < list.Count; i++)
                             {
-                                keymax = key;
+                                int score1 = Convert.ToInt32(list[i].Split(' ').Last());
+                                int score2 = Convert.ToInt32(list[i - 1].Split(' ').Last());
+                                int j = i;
+                                while (score1 >= score2 && j > 0)
+                                {
+                                    str = list[j];
+                                    list[j] = list[j - 1];
+                                    list[j - 1] = str;
+                                    j--;
+                                    score1 = Convert.ToInt32(list[j].Split(' ').Last());
+                                    if (j > 0)
+                                    {
+                                        score2 = Convert.ToInt32(list[j - 1].Split(' ').Last());
+                                    }
+                                }
                             }
-                            score.Add(key, line);
-                        }
-                        string Player = player + " " + recordPlayer;
-                        score.Add(recordPlayer, Player);
-                        var sortedDict = new SortedDictionary<int, string>(score);
-                        foreach (KeyValuePair<int, string> sort in sortedDict)
-                        {
-                            stack.Push(sort.Value);
                         }
                     }
                     using (StreamWriter sw = new StreamWriter(path))
                     {
-                        foreach (KeyValuePair<int, string> Scores in score)
+                        foreach (string listplayer in list)
                         {
-                            sw.WriteLine(stack.Pop());
+                            sw.WriteLine(listplayer);
                         }
                     }
                 }

@@ -44,13 +44,9 @@ namespace Scrabble
             }
         }
     }
-    enum GameState
-    {
-        PlaceLetter,
-        SelectWords
-    }
     class Game
     {
+        public static Game game = new Game();
         public Letter[,] Pole;
         public Player[] Players;
 
@@ -58,25 +54,36 @@ namespace Scrabble
 
         public int turn;
 
-        public Game(int w, int h, String[] players)
+        private Game()
         {
             turn = 0;
             word = new List<Letter>();
-            Pole = new Letter[w, h];
-            for (int i = 0; i < w; i++)
+            Pole = new Letter[15, 15];
+            for (int i = 0; i < 15; i++)
             {
-                for (int j = 0; j < h; j++)
+                for (int j = 0; j < 15; j++)
                 {
                     Pole[i, j] = new Letter();
                     Pole[i, j].w = i;
                     Pole[i, j].h = j;
                 }
             }
+        }
+        public void Start(String[] players) { 
             Players = new Player[players.Length];
             for (int i = 0; i < players.Length; i++)
             {
                 Players[i] = new Player(players[i], 7);
                 Players[i].Refill();
+            }
+            for (int i = 0; i < 15; i++)
+            {
+                for (int j = 0; j < 15; j++)
+                {
+                    Pole[i, j].letter = default(char);
+                    Pole[i, j].w = i;
+                    Pole[i, j].h = j;
+                }
             }
         }
 

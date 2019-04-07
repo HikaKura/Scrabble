@@ -50,6 +50,17 @@ namespace Scrabble
             this.letter5 = new System.Windows.Forms.PictureBox();
             this.letter6 = new System.Windows.Forms.PictureBox();
             this.letter7 = new System.Windows.Forms.PictureBox();
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList.ImageSize = new System.Drawing.Size(256, 256);
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.AddRange(new Image[] { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z });
+
+            PoleButtons.pb.SetImages(imageList);
+            PoleButtons.pb.CreateButtons();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
@@ -61,19 +72,18 @@ namespace Scrabble
             ((System.ComponentModel.ISupportInitialize)(this.letter5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letter6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letter7)).BeginInit();
+            PoleButtons.pb.StartInit();
             this.SuspendLayout();
-            // 
-            // imageList
-            // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList.ImageSize = new System.Drawing.Size(256, 256);
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.AddRange(new Image[] { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z });
+            PoleButtons.pb.Init();
             // 
             // letter1
             // 
             let = rnd.Next(0, imageList.Images.Count);
-            this.letter1.Image = imageList.Images[let]; 
+            this.letter1.Image = imageList.Images[let];
+            this.letter1.MouseDown += (object sender, MouseEventArgs e) =>
+            {
+                DoDragDrop(this.letter1, DragDropEffects.Move | DragDropEffects.Copy);
+            };
             this.letter1.SizeMode = PictureBoxSizeMode.StretchImage;
             this.letter1.BackColor = System.Drawing.Color.Transparent;
             this.letter1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -269,9 +279,10 @@ namespace Scrabble
             this.BackgroundImage = global::Scrabble.Properties.Resources.backgroundPlay;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
+            PoleButtons.pb.AddToControls(this.Controls);
             this.Controls.Add(this.pictureBoxChange);
             this.Controls.Add(this.pictureBoxHelp);
-            this.Controls.Add(this.pictureBoxField);
+            //this.Controls.Add(this.pictureBoxField);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.letter1);
             this.Controls.Add(this.letter2);
@@ -284,6 +295,7 @@ namespace Scrabble
             this.Controls.Add(this.record);
             this.Name = "PlayForm";
             this.Text = "Play";
+            PoleButtons.pb.EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).EndInit();
@@ -566,10 +578,16 @@ namespace Scrabble
 
         private void DeleteComponent()
         {
+            this.Visible = false;
+            this.Controls.Clear();
+            this.Visible = true;
+
+            /*
             while (this.Controls.Count > 0)
             {
                 this.Controls.RemoveAt(0);
             }
+            */
         }
 
         private PictureBox pictureBoxExit;
