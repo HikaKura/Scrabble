@@ -85,7 +85,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Operational_Amplifier.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,7 +102,6 @@
     <None Include="Resources\ExitButton.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\operational_amplifier.ttf" />
     <None Include="Resources\StartButton.png" />
   </ItemGroup>
   <ItemGroup>
@@ -265,10 +263,13 @@
     <None Include="Resources\left.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Score.txt" />
+    <None Include="Resources\ScoreForm.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ScoreForm.jpg" />
+    <None Include="Resources\PlayerForm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

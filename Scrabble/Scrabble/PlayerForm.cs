@@ -34,41 +34,48 @@ namespace Scrabble
                     player = textBox.Text;
                     Close();
                     DeleteComponent();
-                    ScoreForm();
-                }
-            }
-            string path = Environment.CurrentDirectory + "\\Score.txt";
-            using (StreamReader sr = new StreamReader(path))
-            {
-                int key = 0;
-                int keymax = 0;
-                string line = "";
-                while (!sr.EndOfStream)
-                {
-                    line = sr.ReadLine();
-                    string[] words = line.Split(new char[] { ' ' });
-                    key = Convert.ToInt32(words[1]);
-                    if (key > keymax)
+                    //ScoreForm();
+                    string path = Environment.CurrentDirectory + "\\Score.txt";
+                    using (StreamReader sr = new StreamReader(path))
                     {
-                        keymax = key;
+                        int key = 0;
+                        int keymax = 0;
+                        string line = "";
+                        while (!sr.EndOfStream)
+                        {
+                            line = sr.ReadLine();
+                            string[] words = line.Split(new char[] { ' ' });
+                            key = Convert.ToInt32(words[1]);
+                            if (key > keymax)
+                            {
+                                keymax = key;
+                            }
+                            score.Add(key, line);
+                        }
+                        string Player = player + " " + recordPlayer;
+                        score.Add(recordPlayer, Player);
+                        var sortedDict = new SortedDictionary<int, string>(score);
+                        foreach (KeyValuePair<int, string> sort in sortedDict)
+                        {
+                            stack.Push(sort.Value);
+                        }
                     }
-                    score.Add(key, line);
+                    using (StreamWriter sw = new StreamWriter(path))
+                    {
+                        foreach (KeyValuePair<int, string> Scores in score)
+                        {
+                            sw.WriteLine(stack.Pop());
+                        }
+                    }
                 }
-                string Player = player + " " + recordPlayer;
-                score.Add(recordPlayer, Player);
-                var sortedDict = new SortedDictionary<int, string>(score);
-                foreach (KeyValuePair<int, string> sort in sortedDict)
-                {
-                    stack.Push(sort.Value);
-                }
+                else {
+                    MessageBox.Show("Name must not contain spaces", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }               
             }
-            using (StreamWriter sw = new StreamWriter(path))
-            {
-                foreach (KeyValuePair<int, string> Scores in score)
-                {
-                    sw.WriteLine(stack.Pop());
-                }
+            else {
+                MessageBox.Show("Name must be between 1 and 7 characters inclusive", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void buttonToMenu_Click(object sender, EventArgs e)
