@@ -13,6 +13,7 @@ namespace Scrabble
         /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private Random rnd = new Random();
 
         /// <summary>
         /// Освободить все используемые ресурсы.
@@ -34,6 +35,7 @@ namespace Scrabble
             this.pictureBoxField = new System.Windows.Forms.PictureBox();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
             this.time = new System.Windows.Forms.Label();
+            this.record = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
@@ -105,11 +107,24 @@ namespace Scrabble
             //C:\\Users\\kimab\\source\\repos\\Scrabble\\Scrabble\\Scrabble\\Resources
             f.AddFontFile(path);
             this.time.Font = new Font(f.Families[0], 35F);
-            this.time.ForeColor = Color.White;this.time.Location = new System.Drawing.Point(880,5);
+            this.time.ForeColor = Color.White;
+            this.time.Location = new System.Drawing.Point(880,5);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(104, 39);
             this.time.TabIndex = 5;
             this.time.Text = "timer";
+            // 
+            // labelrecord
+            // 
+            this.record.AutoSize = true;
+            this.record.BackColor = System.Drawing.Color.Transparent;
+            this.record.Font = new Font(f.Families[0], 35F);
+            this.record.ForeColor = Color.White;
+            this.record.Location = new System.Drawing.Point(600, 7);
+            this.record.Name = "record";
+            this.record.Size = new System.Drawing.Size(104, 39);
+            this.record.TabIndex = 5;
+            //this.record.Text = rnd.Next(100).ToString();
             // 
             // timer
             // 
@@ -127,6 +142,7 @@ namespace Scrabble
             this.Controls.Add(this.pictureBoxField);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.time);
+            this.Controls.Add(this.record);
             this.Name = "PlayForm";
             this.Text = "Play";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).EndInit();
@@ -433,6 +449,7 @@ namespace Scrabble
         private PictureBox pictureBoxField;
         private PictureBox pictureBoxBack;
         private Label time;
+        public Label record;
         private PictureBox pictureBoxRightPage;
         private PictureBox pictureBoxLeftPage;
         private int page = 1;

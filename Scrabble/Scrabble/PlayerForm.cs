@@ -15,10 +15,12 @@ namespace Scrabble
     {
         private Dictionary<int, string> score = new Dictionary<int, string>();
         private Stack<string> stack = new Stack<string>();
+        private int recordPlayer = 0;
 
-        public PlayerForm()
+        public PlayerForm(int recordPlayer)
         {
             InitializeComponent();
+            this.recordPlayer = recordPlayer;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -52,9 +54,8 @@ namespace Scrabble
                     }
                     score.Add(key, line);
                 }
-                int rec = 110;
-                string Player = player + " " + rec;
-                score.Add(rec, Player);
+                string Player = player + " " + recordPlayer;
+                score.Add(recordPlayer, Player);
                 var sortedDict = new SortedDictionary<int, string>(score);
                 foreach (KeyValuePair<int, string> sort in sortedDict)
                 {

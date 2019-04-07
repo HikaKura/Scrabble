@@ -30,6 +30,7 @@ namespace Scrabble
         {
             DeleteComponent();
             PlayForm();
+            record.Text = rnd.Next(100).ToString();
             timer.Enabled = !timer.Enabled;
             StartTime = DateTime.Now;
         }
@@ -54,7 +55,7 @@ namespace Scrabble
 
         private void buttonPlayer_Click(object sender, EventArgs e)
         {
-            PlayerForm player = new PlayerForm();
+            PlayerForm player = new PlayerForm(Convert.ToInt32(record.Text));
             player.Show();
         }
 
