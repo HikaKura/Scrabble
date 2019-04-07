@@ -67,7 +67,7 @@ namespace Scrabble
 
         private void buttonRightPage_Click(object sender, EventArgs e)
         {
-            if (page < 3)
+            if (page < 2)
             {
                 page++;
                 if (page == 1)
@@ -78,10 +78,10 @@ namespace Scrabble
                 {
                     TwoPage();
                 }
-                else if (page == 3)
-                {
-                    ThreePage();
-                }
+                //else if (page == 3)
+                //{
+                //    ThreePage();
+                //}
             }
         }
 
@@ -98,10 +98,10 @@ namespace Scrabble
                 {
                     TwoPage();
                 }
-                else if (page == 3)
-                {
-                    ThreePage();
-                }
+                //else if (page == 3)
+                //{
+                //    ThreePage();
+                //}
             }
         }
 
