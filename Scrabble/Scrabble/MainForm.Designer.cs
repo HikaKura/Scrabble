@@ -80,10 +80,6 @@ namespace Scrabble
             // 
             let = rnd.Next(0, imageList.Images.Count);
             this.letter1.Image = imageList.Images[let];
-            this.letter1.MouseDown += (object sender, MouseEventArgs e) =>
-            {
-                DoDragDrop('x', DragDropEffects.Move | DragDropEffects.Copy);
-            };
             this.letter1.SizeMode = PictureBoxSizeMode.StretchImage;
             this.letter1.BackColor = System.Drawing.Color.Transparent;
             this.letter1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -184,6 +180,15 @@ namespace Scrabble
             this.letter7.Text = let.ToString();
             this.letter7.TabIndex = 0;
             this.letter7.TabStop = false;
+
+            PoleButtons.pb.AddButtons(
+                letter1,
+                letter2,
+                letter3,
+                letter4,
+                letter5,
+                letter6,
+                letter7);
             // 
             // pictureBoxChange
             // 

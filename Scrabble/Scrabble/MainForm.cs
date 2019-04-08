@@ -33,6 +33,7 @@ namespace Scrabble
             record.Text = rnd.Next(100).ToString();
             timer.Enabled = !timer.Enabled;
             StartTime = DateTime.Now;
+            buttonPlayer_Click(null, null);
         }
 
         private void buttonToMenu_Click(object sender, EventArgs e)

@@ -16,14 +16,43 @@ namespace Scrabble
         private bool[,] Selects;
         private static Random rnd = new Random();
         private ImageList Images;
-
+        private bool[] isPickedLetter;
+        private PictureBox[] LettersPool;
         private PoleButtons()
         {
             Letters = new System.Windows.Forms.PictureBox[15, 15];
             Panels = new Panel[15, 15];
             Selects = new bool[15, 15];
+            isPickedLetter = new bool[7];
+            LettersPool = new PictureBox[7];
+        }
+        
+        public void AddButtons(PictureBox a0, PictureBox a1, PictureBox a2, PictureBox a3, PictureBox a4, PictureBox a5, PictureBox a6)
+        {
+            LettersPool[0] = a0;
+            LettersPool[1] = a1;
+            LettersPool[2] = a2;
+            LettersPool[3] = a3;
+            LettersPool[4] = a4;
+            LettersPool[5] = a5;
+            LettersPool[6] = a6;
+            UpdateButtons();
         }
 
+        public void UpdateButtons()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                char a = (char)('a' + rnd.Next() % 26);
+                LettersPool[i].Image = Images.Images[a - 'a'];
+                int num = i;
+                LettersPool[i].MouseDown += (object sender, MouseEventArgs e) =>
+                {
+                    LettersPool[num].Parent.DoDragDrop(a, DragDropEffects.Move | DragDropEffects.Copy);
+                };
+            }
+
+        }
         public void SetImages(ImageList imageLetters)
         {
             Images = imageLetters;
@@ -38,6 +67,10 @@ namespace Scrabble
                     Letters[i, j] = new System.Windows.Forms.PictureBox();
                     Panels[i, j] = new Panel();
                 }
+            }
+            for(int i = 0; i < 7; i++)
+            {
+                isPickedLetter[i] = false;
             }
         }
 
@@ -60,7 +93,7 @@ namespace Scrabble
                 {
                     GC.KeepAlive(Letters[i, j]);
                     GC.KeepAlive(Panels[i, j]);
-                    Letters[i, j].Image = Images.Images[(rnd.Next() % 26)];
+                    Letters[i, j].Image = null; // Images.Images[(rnd.Next() % 26)];
                     Letters[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
                     Letters[i, j].BackColor = System.Drawing.Color.Transparent;
                     Letters[i, j].BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -85,6 +118,7 @@ namespace Scrabble
                     {
                         char s = (char)e.Data.GetData(e.Data.GetFormats()[0], true);
                         Game.game.PlaceLetter(w, h, s);
+                        Letters[w, h].Image = Images.Images[(int)(s - 'a')];
                     };
                     Panels[i, j].DragEnter += (object sender, DragEventArgs e) =>
                     {
