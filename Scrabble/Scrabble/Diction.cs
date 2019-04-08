@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Scrabble.Logic
+namespace Scrabble
 {
     class Diction
     {
-        private static Diction diction = new Diction();
-        private SortedSet<String> dic = new SortedSet<string>();
+        public static Diction diction = new Diction();
+        public SortedSet<String> dic = new SortedSet<string>();
         public Diction()
         {
             using (StreamReader sr = new StreamReader("Dictionary.txt"))
@@ -16,7 +16,7 @@ namespace Scrabble.Logic
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    dic.Add(line);
+                    dic.Add(line.ToLower());
                 }
             }
         }

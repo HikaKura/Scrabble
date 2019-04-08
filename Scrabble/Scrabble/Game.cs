@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Scrabble
 {
@@ -48,6 +49,7 @@ namespace Scrabble
         public static Game game = new Game();
         public Letter[,] Pole;
         public Player player;
+        public Dictionary<char, int> dic;
 
         public List<Letter> word;
 
@@ -55,6 +57,7 @@ namespace Scrabble
 
         private Game()
         {
+            dic = new Dictionary<char, int>();
             turn = 0;
             word = new List<Letter>();
             Pole = new Letter[15, 15];
@@ -77,7 +80,32 @@ namespace Scrabble
                     Pole[i, j].h = j;
                 }
             }
-
+            dic.Add('a', 1);
+            dic.Add('e', 1);
+            dic.Add('i', 1);
+            dic.Add('l', 1);
+            dic.Add('n', 1);
+            dic.Add('o', 1);
+            dic.Add('r', 1);
+            dic.Add('s', 1);
+            dic.Add('t', 1);
+            dic.Add('u', 1);
+            dic.Add('d', 2);
+            dic.Add('g', 2);
+            dic.Add('b', 3);
+            dic.Add('c', 3);
+            dic.Add('m', 3);
+            dic.Add('p', 3);
+            dic.Add('f', 4);
+            dic.Add('h', 4);
+            dic.Add('v', 4);
+            dic.Add('w', 4);
+            dic.Add('y', 4);
+            dic.Add('k', 5);
+            dic.Add('j', 8);
+            dic.Add('x', 8);
+            dic.Add('q', 10);
+            dic.Add('z', 10);
         }
 
         public void UpdateButtons()
@@ -123,9 +151,21 @@ namespace Scrabble
             return false;
         }
 
-        public bool CheckWord()
+        public void CheckWord(Label record)
         {
-            return true;
+            String s = ""; int score = 0;
+
+            foreach (var item in word)
+            {
+                s += item.letter;
+                score += dic[item.letter];
+            }
+            if (Diction.FindWord(s))
+            {
+                
+                record.Text = (Int32.Parse(record.Text) + score).ToString();
+                SelectLetter(word[0].w, word[0].h);
+            }
         }
     }
 }

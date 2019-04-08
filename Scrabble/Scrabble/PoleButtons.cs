@@ -39,6 +39,11 @@ namespace Scrabble
             Game.game.UpdateButtons();
         }
 
+        public void DragDropDelete(object sender, DragEventArgs e)
+        {
+            
+        }
+        
         public void UpdateButtons(char[] letters)
         {
             for (int i = 0; i < 7; i++)

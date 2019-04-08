@@ -235,7 +235,10 @@ namespace Scrabble
             this.pictureBoxHelp.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxHelp.TabIndex = 1;
             this.pictureBoxHelp.TabStop = false;
-            this.pictureBoxHelp.Click += new System.EventHandler(this.buttonToMenu_Click);
+            this.pictureBoxHelp.Click += (object Sender, EventArgs e) =>
+            {
+                Game.game.CheckWord(this.record);
+            };
             // 
             // pictureBoxBack
             // 

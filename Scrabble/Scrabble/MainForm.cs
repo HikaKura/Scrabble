@@ -30,7 +30,7 @@ namespace Scrabble
         {
             DeleteComponent();
             PlayForm();
-            record.Text = rnd.Next(100).ToString();
+            record.Text = "0";
             timer.Enabled = !timer.Enabled;
             StartTime = DateTime.Now;
         }
