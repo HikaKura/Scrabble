@@ -27,7 +27,7 @@ namespace Scrabble
         {
             string player = "";
 
-            if (textBox.Text.Count() > 0 && textBox.Text.Count() < 8)
+            if (textBox.Text.Count() > 0 && textBox.Text.Count() < 16)
             {
                 if (!textBox.Text.Contains(" "))
                 {
@@ -79,7 +79,7 @@ namespace Scrabble
                 }               
             }
             else {
-                MessageBox.Show("Name must be between 1 and 7 characters inclusive", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Name must be between 1 and 15 characters inclusive", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }

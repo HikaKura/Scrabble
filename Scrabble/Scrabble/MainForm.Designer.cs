@@ -204,7 +204,10 @@ namespace Scrabble
             this.pictureBoxChange.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxChange.TabIndex = 0;
             this.pictureBoxChange.TabStop = false;
-            this.pictureBoxChange.Click += new System.EventHandler(this.buttonToMenu_Click);
+            this.pictureBoxChange.Click += (object Sender, EventArgs e) =>
+            {
+                Game.game.UpdateButtons();
+            };
             // 
             // pictureBoxSaveToScore
             // 

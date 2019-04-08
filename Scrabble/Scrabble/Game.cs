@@ -26,21 +26,20 @@ namespace Scrabble
         public static Random random = new Random();
         public String Name;
         public Char[] Letters;
+        public bool[] Used;
         public int Score;
         public Player(String name, int letter_count)
         {
             Score = 0;
             Name = name;
             Letters = new char[letter_count];
+            Used = new bool[letter_count];
         }
         public void Refill()
         {
             for (int i = 0; i < Letters.Length; i++)
             {
-                if (Letters[i] == default(char))
-                {
-                    Letters[i] = (char)((int)'A' + random.Next() % 33);
-                }
+                Letters[i] = (char)((int)'a' + random.Next() % 26);
             }
         }
     }
@@ -48,7 +47,7 @@ namespace Scrabble
     {
         public static Game game = new Game();
         public Letter[,] Pole;
-        public Player[] Players;
+        public Player player;
 
         public List<Letter> word;
 
@@ -68,14 +67,7 @@ namespace Scrabble
                     Pole[i, j].h = j;
                 }
             }
-        }
-        public void Start(String[] players) { 
-            Players = new Player[players.Length];
-            for (int i = 0; i < players.Length; i++)
-            {
-                Players[i] = new Player(players[i], 7);
-                Players[i].Refill();
-            }
+            player = new Player("Player", 7);
             for (int i = 0; i < 15; i++)
             {
                 for (int j = 0; j < 15; j++)
@@ -85,12 +77,13 @@ namespace Scrabble
                     Pole[i, j].h = j;
                 }
             }
+
         }
 
-        public bool NextTurn()
+        public void UpdateButtons()
         {
-            turn = (turn + 1) % Players.Length;
-            return false;
+            player.Refill();
+            PoleButtons.pb.UpdateButtons(player.Letters);
         }
 
         public bool PlaceLetter(int w, int h, char a)
@@ -133,28 +126,6 @@ namespace Scrabble
         public bool CheckWord()
         {
             return true;
-        }
-
-        public void Debug()
-        {
-            foreach (var player in Players)
-            {
-                Console.Out.WriteLine(player.Name);
-            }
-            Console.Out.WriteLine("turn:" + Players[turn].Name);
-            for (int j = 0; j < Pole.GetLength(1); j++)
-            {
-                for (int i = 0; i < Pole.GetLength(0); i++)
-                {
-                    Console.Out.Write("" + Pole[j, i].letter + ' ');
-                }
-                Console.Out.WriteLine();
-            }
-            foreach (var letter in word)
-            {
-                Console.Out.Write(letter.letter);
-            }
-            Console.Out.WriteLine();
         }
     }
 }

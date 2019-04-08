@@ -36,22 +36,20 @@ namespace Scrabble
             LettersPool[4] = a4;
             LettersPool[5] = a5;
             LettersPool[6] = a6;
-            UpdateButtons();
+            Game.game.UpdateButtons();
         }
 
-        public void UpdateButtons()
+        public void UpdateButtons(char[] letters)
         {
             for (int i = 0; i < 7; i++)
             {
-                char a = (char)('a' + rnd.Next() % 26);
-                LettersPool[i].Image = Images.Images[a - 'a'];
+                LettersPool[i].Image = Images.Images[letters[i] - 'a'];
                 int num = i;
                 LettersPool[i].MouseDown += (object sender, MouseEventArgs e) =>
                 {
-                    LettersPool[num].Parent.DoDragDrop(a, DragDropEffects.Move | DragDropEffects.Copy);
+                    LettersPool[num].Parent.DoDragDrop(letters[num], DragDropEffects.Move | DragDropEffects.Copy);
                 };
             }
-
         }
         public void SetImages(ImageList imageLetters)
         {
