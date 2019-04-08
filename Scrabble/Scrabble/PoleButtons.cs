@@ -58,6 +58,8 @@ namespace Scrabble
             {
                 for (int j = 0; j < 15; j++)
                 {
+                    GC.KeepAlive(Letters[i, j]);
+                    GC.KeepAlive(Panels[i, j]);
                     Letters[i, j].Image = Images.Images[(rnd.Next() % 26)];
                     Letters[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
                     Letters[i, j].BackColor = System.Drawing.Color.Transparent;
@@ -81,7 +83,8 @@ namespace Scrabble
                     Panels[i, j].Size = new System.Drawing.Size(25, 25);
                     Panels[i, j].DragDrop += (object Sender, DragEventArgs e) =>
                     {
-                        Game.game.PlaceLetter(i, j, 'а');
+                        char s = (char)e.Data.GetData(e.Data.GetFormats()[0], true);
+                        Game.game.PlaceLetter(w, h, s);
                     };
                     Panels[i, j].DragEnter += (object sender, DragEventArgs e) =>
                     {
@@ -139,6 +142,14 @@ namespace Scrabble
                     }
                 }
             }
+        }
+
+        public void ClearLetter(int w, int h)
+        {
+            Selects[w, h] = false;
+            Rectangle rect = Panels[w, h].Bounds;
+            rect.Inflate(3, 3);
+            Letters[w, h].Parent.Parent.Invalidate(rect);
         }
     }
 }

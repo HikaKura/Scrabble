@@ -113,6 +113,7 @@ namespace Scrabble
                 {
                     while (word.Count > ind)
                     {
+                        PoleButtons.pb.ClearLetter(word[word.Count - 1].w, word[word.Count - 1].h);
                         word.RemoveAt(word.Count - 1);
                     }
                 }
@@ -122,6 +123,7 @@ namespace Scrabble
                     if ((word.Count == 0) || ((word.Last<Letter>() - Pole[w, h]) == 1))
                     {
                         word.Add(Pole[w, h]);
+                        return true;
                     }
                 }
             }

@@ -82,7 +82,7 @@ namespace Scrabble
             this.letter1.Image = imageList.Images[let];
             this.letter1.MouseDown += (object sender, MouseEventArgs e) =>
             {
-                DoDragDrop(this.letter1, DragDropEffects.Move | DragDropEffects.Copy);
+                DoDragDrop('x', DragDropEffects.Move | DragDropEffects.Copy);
             };
             this.letter1.SizeMode = PictureBoxSizeMode.StretchImage;
             this.letter1.BackColor = System.Drawing.Color.Transparent;
