@@ -39,6 +39,7 @@ namespace Scrabble
             this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
             this.pictureBoxField = new System.Windows.Forms.PictureBox();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSaveToScore = new System.Windows.Forms.PictureBox();
             this.time = new System.Windows.Forms.Label();
             this.record = new System.Windows.Forms.Label();
             this.imageList = new System.Windows.Forms.ImageList();
@@ -65,6 +66,7 @@ namespace Scrabble
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaveToScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letter1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letter2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letter3)).BeginInit();
@@ -204,6 +206,20 @@ namespace Scrabble
             this.pictureBoxChange.TabStop = false;
             this.pictureBoxChange.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
+            // pictureBoxSaveToScore
+            // 
+            this.pictureBoxSaveToScore.Image = SaveToScore;
+            this.pictureBoxSaveToScore.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSaveToScore.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxSaveToScore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxSaveToScore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSaveToScore.Location = new System.Drawing.Point(573, 450);
+            this.pictureBoxSaveToScore.Name = "pictureBoxSaveToScore";
+            this.pictureBoxSaveToScore.Size = new System.Drawing.Size(95, 95);
+            this.pictureBoxSaveToScore.TabIndex = 0;
+            this.pictureBoxSaveToScore.TabStop = false;
+            this.pictureBoxSaveToScore.Click += new System.EventHandler(this.buttonPlayer_Click);
+            // 
             // pictureBoxHelp
             // 
             this.pictureBoxHelp.Image = Help;
@@ -211,12 +227,12 @@ namespace Scrabble
             this.pictureBoxHelp.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxHelp.Location = new System.Drawing.Point(673, 450);
+            this.pictureBoxHelp.Location = new System.Drawing.Point(690, 450);
             this.pictureBoxHelp.Name = "pictureBoxHelp";
             this.pictureBoxHelp.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxHelp.TabIndex = 1;
             this.pictureBoxHelp.TabStop = false;
-            this.pictureBoxHelp.Click += new System.EventHandler(this.buttonPlayer_Click);
+            this.pictureBoxHelp.Click += new System.EventHandler(this.buttonToMenu_Click);
             // 
             // pictureBoxBack
             // 
@@ -297,11 +313,13 @@ namespace Scrabble
             this.Controls.Add(this.letter6);
             this.Controls.Add(this.letter7);
             this.Controls.Add(this.time);
+            this.Controls.Add(this.pictureBoxSaveToScore);
             this.Controls.Add(this.record);
             this.Name = "PlayForm";
             this.Text = "Play";
             PoleButtons.pb.EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSaveToScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
@@ -383,7 +401,7 @@ namespace Scrabble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesOnePage;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesOnePageNew;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
             this.Name = "OnePage";
@@ -397,7 +415,7 @@ namespace Scrabble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesTwoPage;
+            this.BackgroundImage = global::Scrabble.Properties.Resources.RulesTwoPageNew;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 571);
             this.Name = "TwoPage";
@@ -620,10 +638,12 @@ namespace Scrabble
         Image Field = Resources.Field;
         Image RightPage = Resources.right;
         Image LeftPage = Resources.left;
+        Image SaveToScore = Resources.SaveToScore;
         private PictureBox pictureBoxChange;
         private PictureBox pictureBoxHelp;
         private PictureBox pictureBoxField;
         private PictureBox pictureBoxBack;
+        private PictureBox pictureBoxSaveToScore;
         private Label time;
         public Label record;
         private ImageList imageList;

@@ -317,5 +317,14 @@
   <ItemGroup>
     <None Include="Resources\Rx.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveToScore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RulesOnePageNew.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RulesTwoPageNew.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

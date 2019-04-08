@@ -392,6 +392,16 @@ namespace Scrabble.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RulesOnePageNew {
+            get {
+                object obj = ResourceManager.GetObject("RulesOnePageNew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RulesThreePage {
             get {
                 object obj = ResourceManager.GetObject("RulesThreePage", resourceCulture);
@@ -412,6 +422,16 @@ namespace Scrabble.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RulesTwoPageNew {
+            get {
+                object obj = ResourceManager.GetObject("RulesTwoPageNew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap S {
             get {
                 object obj = ResourceManager.GetObject("S", resourceCulture);
@@ -425,6 +445,16 @@ namespace Scrabble.Properties {
         internal static System.Drawing.Bitmap SaveButton {
             get {
                 object obj = ResourceManager.GetObject("SaveButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SaveToScore {
+            get {
+                object obj = ResourceManager.GetObject("SaveToScore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
